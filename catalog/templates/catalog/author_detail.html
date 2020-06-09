@@ -1,0 +1,25 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+    <h1>{{ author }}</h1>
+
+    <p><strong>Imię:</strong> {{ author.imie }}</p>
+    <p><strong>Nazwisko:</strong> {{ author.nazwisko }}</p>
+    <p><strong>Data urodzenia:</strong> {{ author.data_urodzenia }}</p>
+    <p><strong>Żyje:</strong>
+        {% if author.data_zgonu %}
+            <p class="text-success">NIE</p>
+        {% else %}
+            <p class="text-danger">TAK</p>
+        {% endif %}
+
+    <div style="margin-left:20px;margin-top:20px">
+        <h4>Książki:</h4>
+
+        {% for book in author.book_set.all %}
+            <hr>
+            <p><a href="{% url 'book-detail' book.pk %}">{{ book.title }}</a><strong>({{ book.bookinstance_set.count }})</strong></p>
+            <p>{{ book.summary }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

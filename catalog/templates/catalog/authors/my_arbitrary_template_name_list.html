@@ -1,0 +1,16 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+  <h1>Lista Autorów</h1>
+  {% if author_list %}
+  <ul>
+    {% for author in author_list %}
+      <li>
+        <a href="{{ author.get_absolute_url }}">{{ author }}</a> ({{author.data_urodzenia}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>Nie ma autorów do wyswietlenia.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'catalog/base_generic.html' %}
+
+{% block content %}
+    <h1>Usuń Autora</h1>
+    <p>Czy na pewno chcesz usunąć autora: {{ author }}?</p>
+    <form action="" method="post">
+    {%  csrf_token %}
+        <input type="submit" value="Tak, usuń.">
+    </form>
+{% endblock %}

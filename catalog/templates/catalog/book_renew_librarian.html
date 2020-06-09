@@ -1,0 +1,17 @@
+{% extends 'catalog/base_generic.html' %}
+
+{% block content %}
+    <h1>Odnowić: {{ book_instance.book.title }}</h1>
+    <p>Pożyczający: {{ book_instance.borrower }}</p>
+    <p{% if book_instance.id_overdue %}
+       class='text-danger'
+    {% endif %}>Termin: {{ book_instance.due_back }}</p>
+
+    <form action="" method="post">
+    {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Zatwierdź">
+    </form>
+{% endblock %}

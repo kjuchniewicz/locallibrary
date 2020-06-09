@@ -1,0 +1,25 @@
+{% extends 'catalog/base_generic.html' %}
+
+{% block title %}LL - Home{% endblock %}
+
+{% block content %}
+    <h1>Local Library Home</h1>
+    <p>Witamy w LocalLibrary, stronie napisanej przez <em>Kamila</em>!</p>
+    <h2>Dynamiczna zawartość</h2>
+    <p>Biblioteka ma następujące liczby rekordów:</p>
+    <ul>
+        <li><strong>Tytuły:</strong> {{ num_books }}</li>
+        <li><strong>Książki:</strong> {{ num_instances }}</li>
+        <li><strong>Książki dostępne:</strong> {{ num_instances_available }}</li>
+        <li><strong>Autorzy:</strong> {{ num_authors }}</li>
+        <li><strong>Gatunki:</strong> {{ num_genres }}</li>
+        <li><strong>Książki na "wi":</strong> {{ num_books_wi }}</li>
+    </ul>
+
+    <p>Odwiedziłeś ten widok {{ num_visits }}
+        {% if num_visits == 1 %}
+            raz
+        {% else %}
+            razy
+        {% endif %}.</p>
+{% endblock %}
