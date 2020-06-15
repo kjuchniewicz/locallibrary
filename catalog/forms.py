@@ -11,9 +11,9 @@ class RenewBookForm(forms.Form):
         data = self.cleaned_data['renewal_date']
 
         if data < date.today():
-            raise ValidationError(_('Nieprawidłowa data - odnowienie w przeszłości'))
+            raise ValidationError(_('Nieprawidłowa data — odnowienie w przeszłości'))
 
         if data > date.today() + timedelta(weeks=4):
-            raise ValidationError(_('Nieprawidłowa data - odnowienie o ponad 4 tygodnie'))
+            raise ValidationError(_('Nieprawidłowa data — odnowienie o ponad 4 tygodnie'))
 
         return data

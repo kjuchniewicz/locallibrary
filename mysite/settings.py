@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.utils.translation import ugettext_lazy as _
+
 # import ldap
 # from django_auth_ldap.config import LDAPSearch, ActiveDirectoryGroupType, GroupOfNamesType
 
@@ -97,6 +99,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -157,7 +160,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'pl-pl'
+LANGUAGES = (
+    ('pl', _('Polski')),
+    ('en', _('English')),
+)
+
+LANGUAGE_CODE = 'pl'
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 TIME_ZONE = 'Europe/Warsaw'
 
