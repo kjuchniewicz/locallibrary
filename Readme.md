@@ -1,10 +1,10 @@
-# Local _Library_ :book: {#custom-id}
+# Local _Library_ :book:
 
 1. [A pretty tiger](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)
 
 2. [Black cat][Black]
 
-3. [Orange cat][Orange]
+3. ![Orange cat][Orange]
     1. A
     2. B
 
@@ -32,11 +32,7 @@ troche kodu
 }
 ```
 
-Here's a ***sentence*** **with** a *footnote*. [^1] and second [^2]
-<fake@example.com>
-
-[^1]: This is the footnote.
-[^2]: Ho ho
+Here's a ***sentence*** **with** a *footnote*. <fake@example.com>
 
 term
 : definition 1
@@ -45,11 +41,10 @@ term
 ~~The world is flat.~~
 
 * [x] Write the press release
-* [ ] Update the website
+* [x] Update the website
 * [ ] Contact the media
 
 > Dorothy followed her through many of the beautiful rooms in her castle.
 >
 >> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
-
-See the section on [`Local Library`](#custom-id).
+>
